@@ -1,15 +1,15 @@
-header {
+header img {
   background-color: #ffffff;
   width: 375px;
   height: 63px;
   text-align: center;
-  border: solid 2px #ffffff;
   margin-bottom: 5px;
 }
 
 .main {
   width: 375px;
   text-align: center;
+  font-family: "Roboto", sans-serif;
 }
 .main__location {
   width: 375px;
@@ -19,4 +19,34 @@ header {
   align-items: center;
   justify-content: center;
   gap: 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.main__description {
+  width: 340px;
+}
+.main__description__title {
+  font-family: "Roboto", sans-serif;
+}
+.main__description__text {
+  color: #353535;
+}
+.main__description__btn {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 218px;
+  height: 50px;
+  color: #ffffff;
+  border: solid 2px #ff79da;
+  border-radius: 39px;
+  background-color: #ff79da;
+  text-decoration: none;
+  margin-left: 20%;
+}
+.main__fonction h2 {
+  display: flex;
+  width: 275px;
+  height: 31px;
 }/*# sourceMappingURL=style.css.map */

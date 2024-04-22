@@ -1,14 +1,38 @@
-header {
+// Font-size
+$base-font-size: 16px;
+
+// Main colors
+$color-primary: #9356dc;
+$light-primary-color: lighten($color-primary, 5%);
+
+$color-secondary: #ff79da;
+$light-secondary-color: lighten($color-secondary, 5%);
+
+$color-tertiary: #99e2d0;
+
+$gradient: linear-gradient(to bottom, $color-secondary, $color-primary 80%);
+$light-gradient: linear-gradient(
+  to bottom,
+  $light-secondary-color,
+  $light-primary-color 80%
+);
+
+// Font-family
+$text-font: "Roboto", sans-serif;
+$title-font: "Shrikhand", cursive;
+
+header img {
   background-color: #ffffff;
   width: 375px;
   height: 63px;
   text-align: center;
-  border: solid 2px #ffffff;
   margin-bottom: 5px;
 }
 .main {
   width: 375px;
   text-align: center;
+  font-family: $text-font;
+
   &__location {
     width: 375px;
     height: 50px;
@@ -17,5 +41,35 @@ header {
     align-items: center;
     justify-content: center;
     gap: 5px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+  }
+  &__description {
+    width: 340px;
+  }
+  &__description__title {
+    font-family: $text-font;
+  }
+  &__description__text {
+    color: #353535;
+  }
+  &__description__btn {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 218px;
+    height: 50px;
+    color: #ffffff;
+    border: solid 2px $color-secondary;
+    border-radius: 39px;
+    background-color: $color-secondary;
+    text-decoration: none;
+    margin-left: 20%;
+  }
+  &__fonction h2 {
+    display: flex;
+    width: 275px;
+    height: 31px;
   }
 }
