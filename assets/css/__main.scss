@@ -1,40 +1,10 @@
-// Font-size
-$base-font-size: 16px;
-
-// Main colors
-$color-primary: #9356dc;
-$light-primary-color: lighten($color-primary, 5%);
-
-$color-secondary: #ff79da;
-$light-secondary-color: lighten($color-secondary, 5%);
-
-$color-tertiary: #99e2d0;
-
-$gradient: linear-gradient(to bottom, $color-secondary, $color-primary 80%);
-$light-gradient: linear-gradient(
-  to bottom,
-  $light-secondary-color,
-  $light-primary-color 80%
-);
-
-// Font-family
-$text-font: "Roboto", sans-serif;
-$title-font: "Shrikhand", cursive;
-
-header img {
-  background-color: #ffffff;
-  width: 375px;
-  height: 63px;
-  text-align: center;
-  margin-bottom: 5px;
-}
 .main {
-  width: 375px;
   text-align: center;
   font-family: $text-font;
+  @media screen(min-width:768px) {
+  }
 
   &__location {
-    width: 375px;
     height: 50px;
     background-color: #eaeaea;
     display: flex;
@@ -44,9 +14,11 @@ header img {
     box-shadow: 0px 4px 4px 0px #00000040;
   }
   &__description {
-    width: 340px;
+    background-color: #f6f6f6;
   }
   &__description__title {
+    font-weight: 100px;
+    margin: 0px;
     font-family: $text-font;
   }
   &__description__text {

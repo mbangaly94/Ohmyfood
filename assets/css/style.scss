@@ -1,0 +1,24 @@
+// Font-size
+$base-font-size: 16px;
+
+// Main colors
+$color-primary: #9356dc;
+$light-primary-color: lighten($color-primary, 5%);
+
+$color-secondary: #ff79da;
+$light-secondary-color: lighten($color-secondary, 5%);
+
+$color-tertiary: #99e2d0;
+
+$gradient: linear-gradient(to bottom, $color-secondary, $color-primary 80%);
+$light-gradient: linear-gradient(
+  to bottom,
+  $light-secondary-color,
+  $light-primary-color 80%
+);
+
+// Font-family
+$text-font: "Roboto", sans-serif;
+$title-font: "Shrikhand", cursive;
+@import "__main.scss";
+@import "__headerandfooter.scss";
