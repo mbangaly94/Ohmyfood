@@ -12,11 +12,16 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
 }
 .main__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   background-color: #f6f6f6;
 }
 .main__description__title {
   font-weight: 100px;
-  margin: 0px;
+  margin: 20px;
   font-family: "Roboto", sans-serif;
 }
 .main__description__text {
@@ -24,9 +29,9 @@
 }
 .main__description__btn {
   display: flex;
-  text-align: center;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   width: 218px;
   height: 50px;
@@ -35,18 +40,89 @@
   border-radius: 39px;
   background-color: #ff79da;
   text-decoration: none;
-  margin-left: 20%;
+  margin-bottom: 20px;
 }
-.main__fonction h2 {
+.main__fonction {
   display: flex;
-  width: 275px;
-  height: 31px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.main__fonction div {
+  gap: 30px;
+}
+.main__fonction__stage {
+  width: 90%;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+}
+.main__fonction__stage div {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9356dc;
+  border-radius: 50px 50px;
+  color: #ffffff;
+}
+
+header {
+  display: flex;
+  justify-content: center;
 }
 
 header img {
   background-color: #ffffff;
-  width: 375px;
+  width: 60%;
   height: 63px;
+  display: flex;
+  justify-self: center;
   text-align: center;
   margin-bottom: 5px;
+}
+
+.footer {
+  padding: 10px;
+  color: white;
+  background-color: #333;
+}
+.footer h2 {
+  margin-bottom: 10px;
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+}
+@media screen and (min-width: 1300px) {
+  .footer h2 {
+    text-align: center;
+  }
+}
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  margin: 5px;
+}
+@media screen and (min-width: 1300px) {
+  .footer__nav {
+    display: flex;
+    justify-content: center;
+  }
+}
+.footer__nav li {
+  list-style: none;
+}
+.footer__nav li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+@media screen and (min-width: 1300px) {
+  .footer__nav li a {
+    display: flex;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,8 +1,6 @@
 .main {
   text-align: center;
   font-family: $text-font;
-  @media screen(min-width:768px) {
-  }
 
   &__location {
     height: 50px;
@@ -14,11 +12,16 @@
     box-shadow: 0px 4px 4px 0px #00000040;
   }
   &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     background-color: #f6f6f6;
   }
   &__description__title {
     font-weight: 100px;
-    margin: 0px;
+    margin: 20px;
     font-family: $text-font;
   }
   &__description__text {
@@ -26,9 +29,9 @@
   }
   &__description__btn {
     display: flex;
-    text-align: center;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     width: 218px;
     height: 50px;
@@ -37,11 +40,75 @@
     border-radius: 39px;
     background-color: $color-secondary;
     text-decoration: none;
-    margin-left: 20%;
+    margin-bottom: 20px;
   }
-  &__fonction h2 {
+  &__fonction {
     display: flex;
-    width: 275px;
-    height: 31px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__fonction div {
+    gap: 30px;
+  }
+  &__fonction__stage {
+    width: 90%;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: #f6f6f6;
+    border-radius: 20px;
+  }
+  &__fonction__stage div {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9356dc;
+    border-radius: 50px 50px;
+    color: #ffffff;
+  }
+
+  &__restaurant {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f6f6f6;
+    h2 {
+      @media screen and (min-width: 768px) {
+        text-align: center;
+      }
+    }
+    &__restaurant__card {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin: 0px;
+      width: 80%;
+      height: 25px;
+      border-radius: 15px;
+    }
+    &__restaurant__card img {
+      width: 90%;
+      height: 20px;
+    }
+    &__restaurant__card__new img {
+      width: 100%;
+      height: 30px;
+      border-radius: 15px;
+    }
+  }
+  &__restaurant__card__note {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30%;
+
+    h3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 }
