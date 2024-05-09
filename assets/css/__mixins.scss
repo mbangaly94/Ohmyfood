@@ -5,3 +5,33 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin button-style {
+  text-decoration: none;
+  border: none;
+  border-radius: 39px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  background: $gradient;
+  transition: all 0.4s ease-in-out;
+}
+
+@mixin button-hover {
+  box-shadow: 5px 5px 5px black;
+  background: $light-gradient;
+}
+
+@mixin base-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.421);
+}
+@mixin heart-solid {
+  background: $gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  cursor: pointer;
+}

@@ -1,27 +1,50 @@
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 63px;
+  width: 100%;
+  background-color: #ffffff;
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Shrikhand", cursive;
+    width: 100%;
+  }
   &__return {
     padding: 5px;
     i {
-      font-size: clamp(1.5rem, 2vw, 2rem);
+      width: 30px;
+      height: 30px;
+      color: black;
     }
   }
 }
+body {
+  width: 100%;
+  margin: 0px;
+}
 
 .main {
+  width: 100%;
+  margin: 0px;
   &__backo {
-    max-height: 55vh;
-    min-height: 30vh;
+    width: 100%;
+    height: 275px;
   }
   &__location h3 {
     font-weight: 400;
   }
   &__menu {
+    background-color: #f6f6f6;
+    border-radius: 40px 40px 0px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 0 rem-calc(40);
     position: relative;
+    width: 100%;
+    margin: 0px;
     top: -50px;
     @media screen and (min-width: 1300px) {
       flex-direction: row;
@@ -29,146 +52,122 @@
     &__title {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       font-family: "Shrikhand", cursive;
       font-weight: 500;
-      padding: rem-calc(20);
       width: 100%;
-      border-radius: rem-calc(30) rem-calc(30) 0 0;
-      font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-      background-color: white;
+
       @media screen and (min-width: 1300px) {
         justify-content: center;
       }
     }
-    .heart {
-      @include flex-center;
-      width: rem-calc(30);
-      height: rem-calc(30);
+    &__head {
+      width: 100%;
+      border-radius: 20px;
+      background-color: #f6f6f6;
+      display: flex;
+      align-items: center;
+      &__heart {
+        position: relative;
+        .fa-regular {
+          top: 0;
+          left: 0;
+        }
+        .fa-solid {
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          &:hover {
+            opacity: 1;
+            transition: all 400ms;
+            background: $light-gradient;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+          }
+        }
+      }
+    }
+    .fa-heart {
+      width: 22px;
+      height: 21px;
+
       @media screen and (min-width: 1300px) {
-        margin-left: rem-calc(20);
-      }
-      &::before {
-        @include heart;
-      }
-      &::after {
-        @include heart;
-        @include heart-solid;
-      }
-      &:hover::before {
-        color: transparent;
-      }
-      &:hover::after {
-        font-weight: 900;
-        opacity: 1;
+        margin-left: 20px;
       }
     }
     &__starter,
     &__dish,
     &__dessert {
-      padding: rem-calc(10) rem-calc(20) rem-calc(40);
+      padding: 5px;
       width: 100%;
       @media screen and (min-width: 1300px) {
         width: 30%;
-        padding-bottom: rem-calc(40);
+        padding-bottom: 5px;
       }
       h3 {
+        display: flex;
         position: relative;
-        margin-bottom: rem-calc(30);
-        padding-left: rem-calc(10);
+        margin-bottom: 10px;
+        padding-left: 15px;
         font-weight: 300;
         text-transform: uppercase;
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: rem-calc(-10);
-          width: rem-calc(50);
-          height: rem-calc(4);
-          background-color: $color-tertiary;
+      }
+      &__meal {
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        background-color: #ffffff;
+        border-radius: 20px;
+        width: 85%;
+        padding: 15px;
+        margin: 15px;
+        gap: 5px;
+        &__description {
+          display: flex;
+          flex-grow: 1;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0px;
+          padding: 0px;
+          h4 {
+            font-family: $text-font;
+            display: flex;
+            margin: 0px;
+          }
+          p {
+            font-family: $text-font;
+            display: flex;
+            margin: 5px 5px 5px 0px;
+          }
+        }
+        &__price {
+          display: flex;
+          margin-top: 25px;
         }
       }
     }
     &__btn {
-      @include button-style;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      margin-left: 25%;
+      margin-bottom: 20px;
+      padding: 15px;
       @include base-shadow;
-      padding: rem-calc(15) rem-calc(40);
-      margin: 0 auto;
+      @include button-style;
+      @media screen and (min-width: 768px) {
+        width: 186px;
+        height: 50px;
+        padding: 15px;
+      }
       &:hover {
         @include button-hover;
       }
     }
-  }
-}
-
-.meal {
-  display: flex;
-  @include base-shadow;
-  border-radius: rem-calc(10);
-  margin-top: rem-calc(20);
-  cursor: pointer;
-  overflow: hidden;
-  animation: appear 1s both;
-  @media screen and (min-width: 1300px) {
-    margin-top: rem-calc(40);
-  }
-  @for $i from 2 through 5 {
-    &:nth-child(#{$i}) {
-      animation-delay: 100ms * $i;
-    }
-  }
-  &__description {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: rem-calc(10);
-    h4 {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-size: clamp(1.4rem, 2vw, 1.9rem);
-    }
-    p {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-weight: 200;
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
-    }
-  }
-  &__price {
-    font-weight: 500;
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
-    margin-left: auto;
-    flex-shrink: 0;
-    display: flex;
-    align-items: flex-end;
-    padding: rem-calc(10) rem-calc(25) rem-calc(10) rem-calc(5);
-  }
-  &__check {
-    @include flex-center;
-    margin-right: -65px;
-    width: 65px;
-    padding: 0 rem-calc(15);
-    background-color: $color-tertiary;
-    transition: margin-right 0.4s ease-in-out;
-    &::after {
-      content: "\f00c";
-      font-family: "FontAwesome";
-      padding: rem-calc(5);
-      border-radius: 50%;
-      color: $color-tertiary;
-      font-size: rem-calc(15);
-      background-color: #fff;
-      transition: transform 0.4s ease-in-out;
-      @media screen and (min-width: 1300px) {
-        padding: rem-calc(10);
-      }
-    }
-  }
-  &:hover &__check,
-  &:focus &__check {
-    margin-right: 0;
-  }
-  &:hover &__check::after,
-  &:focus &__check::after {
-    transform: rotate(360deg);
   }
 }
