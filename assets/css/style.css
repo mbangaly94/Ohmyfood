@@ -139,7 +139,6 @@ img {
   }
 }
 .main__fonction__stages__stage {
-  width: 100%;
   margin: 20px;
   display: flex;
   align-items: center;
@@ -285,7 +284,6 @@ header img {
 }
 
 .footer {
-  width: 100%;
   padding: 10px;
   color: white;
   background-color: #333;
