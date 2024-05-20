@@ -25,6 +25,9 @@ body {
   width: 100%;
   margin: 0px;
 }
+img {
+  object-fit: cover;
+}
 
 .main {
   width: 100%;
@@ -46,8 +49,9 @@ body {
     width: 100%;
     margin: 0px;
     top: -50px;
-    @media screen and (min-width: 1300px) {
-      flex-direction: row;
+    @media screen and (min-width: 768px) {
+      width: 70%;
+      margin-left: 15%;
     }
     &__title {
       display: flex;
@@ -82,8 +86,8 @@ body {
             opacity: 1;
             transition: all 400ms;
             background: $light-gradient;
-            -webkit-background-clip: text;
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
           }
         }
@@ -92,20 +96,13 @@ body {
     .fa-heart {
       width: 22px;
       height: 21px;
-
-      @media screen and (min-width: 1300px) {
-        margin-left: 20px;
-      }
     }
     &__starter,
     &__dish,
     &__dessert {
       padding: 5px;
       width: 100%;
-      @media screen and (min-width: 1300px) {
-        width: 30%;
-        padding-bottom: 5px;
-      }
+
       h3 {
         display: flex;
         position: relative;
@@ -114,6 +111,7 @@ body {
         font-weight: 300;
         text-transform: uppercase;
       }
+
       &__meal {
         display: flex;
         justify-content: space-between;
@@ -126,6 +124,31 @@ body {
         padding: 15px;
         margin: 15px;
         gap: 5px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        animation: slideup 1s forwards;
+        cursor: pointer;
+
+        animation: slidein 1s;
+        @keyframes slidein {
+          from {
+            margin-left: 100%;
+            width: 300%;
+          }
+
+          to {
+            margin-left: 0%;
+            width: 100%;
+          }
+        }
+
+        &:hover {
+          .main__menu__starter__meal__box,
+          .main__menu__dessert__meal__box,
+          .main__menu__dish__meal__box {
+            width: 60px;
+          }
+        }
+
         &__description {
           display: flex;
           flex-grow: 1;
@@ -148,6 +171,23 @@ body {
           display: flex;
           margin-top: 25px;
         }
+        &__box {
+          overflow: hidden;
+          color: white;
+          width: 59px;
+          height: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 0px 20px 20px 0px;
+          background-color: $color-tertiary;
+          width: 0px;
+          transition: all 300ms;
+        }
+        .fa-circle-check {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
     &__btn {
@@ -162,8 +202,7 @@ body {
       @include button-style;
       @media screen and (min-width: 768px) {
         width: 186px;
-        height: 50px;
-        padding: 15px;
+        margin-left: 35%;
       }
       &:hover {
         @include button-hover;

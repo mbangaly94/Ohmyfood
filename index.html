@@ -21,6 +21,16 @@
   </head>
 
   <body>
+    <div class="loader">
+      <span class="lettre">O</span>
+      <span class="lettre">H</span>
+      <span class="lettre">M</span>
+      <span class="lettre">Y</span>
+      <span class="lettre">F</span>
+      <span class="lettre">O</span>
+      <span class="lettre">O</span>
+      <span class="lettre">D</span>
+    </div>
     <header class="header">
       <img src="images/logo/ohmyfood.png" alt="ohmyfood" />
     </header>
@@ -45,20 +55,22 @@
 
       <section class="main__fonction">
         <h2>Fonctionnement</h2>
-        <div class="main__fonction__stage">
-          <div>1</div>
-          <i class="fa-solid fa-mobile-screen-button"></i>
-          <p>Choisissez un restaurant</p>
-        </div>
-        <div class="main__fonction__stage">
-          <div>2</div>
-          <i class="fa-solid fa-list-ul"></i>
-          <p>Composez votre menu</p>
-        </div>
-        <div class="main__fonction__stage">
-          <div>3</div>
-          <i class="fa-solid fa-store"></i>
-          <p>Dégustez au restaurant</p>
+        <div class="main__fonction__stages">
+          <div class="main__fonction__stages__stage">
+            <div>1</div>
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <p>Choisissez un restaurant</p>
+          </div>
+          <div class="main__fonction__stages__stage">
+            <div>2</div>
+            <i class="fa-solid fa-list-ul"></i>
+            <p>Composez votre menu</p>
+          </div>
+          <div class="main__fonction__stages__stage">
+            <div>3</div>
+            <i class="fa-solid fa-store"></i>
+            <p>Dégustez au restaurant</p>
+          </div>
         </div>
       </section>
       <section class="main__restaurant">
@@ -69,13 +81,16 @@
             href="lespages/laPaletteDuGout.html"
           >
             <img
-              src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash copy.jpg"
+              src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
               alt="Plat sur plaque en céramique blanche"
             />
             <div class="main__restaurant__card__note">
               <div class="main__restaurant__card__note__title">
                 <h3>La palette du goût</h3>
-                <i class="fa-regular fa-heart"></i>
+                <div class="main__restaurant__card__note__title__head__heart">
+                  <i class="fa-regular fa-heart"></i>
+                  <i class="fa-solid fa-heart"></i>
+                </div>
               </div>
               <p>Ménilmontant</p>
             </div>
@@ -89,8 +104,13 @@
               alt="Boulettes de viande sur une plaque en céramique blanche"
             />
             <div class="main__restaurant__card__note">
-              <h3>La note enchantée</h3>
-              <i class="fa-regular fa-heart"></i>
+              <div class="main__restaurant__card__note__title">
+                <h3>La note enchantée</h3>
+                <div class="main__restaurant__card__note__title__head__heart">
+                  <i class="fa-regular fa-heart"></i>
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+              </div>
               <p>Charonne</p>
             </div>
           </a>
@@ -103,8 +123,13 @@
               alt="viande crue avec crème et légumes feuillus"
             />
             <div class="main__restaurant__card__note">
-              <h3>À la française</h3>
-              <i class="fa-regular fa-heart"></i>
+              <div class="main__restaurant__card__note__title">
+                <h3>À la française</h3>
+                <div class="main__restaurant__card__note__title__head__heart">
+                  <i class="fa-regular fa-heart"></i>
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+              </div>
               <p>Cité Rouge</p>
             </div>
           </a>
@@ -118,8 +143,13 @@
             />
 
             <div class="main__restaurant__card__note">
-              <h3>Le délice des sens</h3>
-              <i class="fa-regular fa-heart"></i>
+              <div class="main__restaurant__card__note__title">
+                <h3>Le délice des sens</h3>
+                <div class="main__restaurant__card__note__title__head__heart">
+                  <i class="fa-regular fa-heart"></i>
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+              </div>
               <p>Folie-Méricourt</p>
             </div>
           </a>

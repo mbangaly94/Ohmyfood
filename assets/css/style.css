@@ -3,6 +3,56 @@ ul {
   padding: 0px;
 }
 
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2509803922);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeout 2s forwards linear;
+}
+
+@keyframes fadeout {
+  0% {
+    transition: transform 300ms ease-in-out;
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+.lettre {
+  color: #484848;
+  font-size: 40px;
+  letter-spacing: 15px;
+  margin-bottom: 100px;
+  animation: flash 1.2s linear infinite;
+}
+
+@keyframes flash {
+  0% {
+    color: #99e2d0;
+    text-shadow: 0 0 7px #99e2d0;
+  }
+  90% {
+    color: #484848;
+    text-shadow: none;
+  }
+  100% {
+    color: #99e2d0;
+    text-shadow: 0 0 7px #99e2d0;
+  }
+}
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .main {
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -61,19 +111,49 @@ ul {
   flex-direction: column;
   align-items: flex-start;
 }
+@media screen and (min-width: 768px) {
+  .main__fonction {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+}
+.main__fonction__stages {
+  transition-property: transform 100ms;
+  width: 100%;
+}
+.main__fonction__stages :hover {
+  transform: scale(1.15);
+}
+@media screen and (min-width: 768px) {
+  .main__fonction__stages {
+    display: flex;
+    flex-direction: row;
+  }
+}
 .main__fonction div {
   gap: 30px;
 }
-.main__fonction__stage {
-  width: 90%;
+@media screen and (min-width: 768px) {
+  .main__fonction div {
+    gap: 10px;
+  }
+}
+.main__fonction__stages__stage {
+  width: 100%;
   margin: 20px;
   display: flex;
   align-items: center;
   flex-direction: row;
   background-color: #f6f6f6;
   border-radius: 20px;
+  transition: all 0.2s ease-in-out;
 }
-.main__fonction__stage div {
+@media screen and (min-width: 768px) {
+  .main__fonction__stages__stage {
+    gap: 10px;
+  }
+}
+.main__fonction__stages__stage div {
   width: 24px;
   height: 24px;
   display: flex;
@@ -89,7 +169,7 @@ ul {
   background-color: #f6f6f6;
 }
 .main__restaurant h2 {
-  margin: 10px;
+  margin-left: 8%;
 }
 @media screen and (min-width: 768px) {
   .main__restaurant h2 {
@@ -108,10 +188,24 @@ ul {
 .main__restaurant__card {
   width: 100%;
 }
+@media screen and (min-width: 768px) {
+  .main__restaurant__card {
+    gap: 50px;
+  }
+}
 .main__restaurant__card__new {
   text-decoration: none;
   color: black;
   width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .main__restaurant__card__new {
+    text-align: center;
+    width: 40%;
+    gap: 50px;
+    background-color: #ffffff;
+    border-radius: 15px;
+  }
 }
 .main__restaurant__card__new img {
   width: 100%;
@@ -119,6 +213,9 @@ ul {
   border-radius: 15px 15px 0px 0px;
 }
 .main__restaurant__card__note {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
   padding: 30px;
   text-decoration: none;
 }
@@ -127,17 +224,44 @@ ul {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5px;
+  gap: 100px;
 }
-.main__restaurant__card .fa-regular {
+.main__restaurant__card__note__title__head {
+  width: 100%;
+  border-radius: 20px;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+}
+.main__restaurant__card__note__title__head__heart {
+  position: relative;
+}
+.main__restaurant__card__note__title__head__heart .fa-regular {
   text-decoration: none;
   display: flex;
+  top: 0;
+  left: 0;
 }
-.main__restaurant__card p {
+.main__restaurant__card__note__title__head__heart .fa-solid {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main__restaurant__card__note__title__head__heart .fa-solid:hover {
+  opacity: 1;
+  transition: all 400ms;
+  background: linear-gradient(to bottom, #ff93e1, #a16be0 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.main__restaurant__card__note__title p {
   text-decoration: none;
   display: flex;
   margin: 0px;
 }
-.main__restaurant__card h3 {
+.main__restaurant__card__note__title h3 {
   text-decoration: none;
   list-style: none;
   margin: 0px;
@@ -166,14 +290,21 @@ header img {
   color: white;
   background-color: #333;
 }
+@media screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 40px;
+  }
+}
 .footer h2 {
   margin-bottom: 10px;
   font-family: "Shrikhand", cursive;
   font-weight: 400;
 }
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 768px) {
   .footer h2 {
-    text-align: center;
+    margin-right: 20px;
   }
 }
 .footer__nav {
@@ -184,10 +315,11 @@ header img {
   color: #ffffff;
   margin: 5px;
 }
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 768px) {
   .footer__nav {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: row;
   }
 }
 .footer__nav li {
@@ -196,11 +328,6 @@ header img {
 .footer__nav li a {
   text-decoration: none;
   color: #ffffff;
-}
-@media screen and (min-width: 1300px) {
-  .footer__nav li a {
-    display: flex;
-  }
 }
 
 .header {
@@ -232,6 +359,11 @@ body {
   margin: 0px;
 }
 
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .main {
   width: 100%;
   margin: 0px;
@@ -254,9 +386,10 @@ body {
   margin: 0px;
   top: -50px;
 }
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 768px) {
   .main__menu {
-    flex-direction: row;
+    width: 70%;
+    margin-left: 15%;
   }
 }
 .main__menu__title {
@@ -296,28 +429,17 @@ body {
   opacity: 1;
   transition: all 400ms;
   background: linear-gradient(to bottom, #ff93e1, #a16be0 80%);
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
 }
 .main__menu .fa-heart {
   width: 22px;
   height: 21px;
 }
-@media screen and (min-width: 1300px) {
-  .main__menu .fa-heart {
-    margin-left: 20px;
-  }
-}
 .main__menu__starter, .main__menu__dish, .main__menu__dessert {
   padding: 5px;
   width: 100%;
-}
-@media screen and (min-width: 1300px) {
-  .main__menu__starter, .main__menu__dish, .main__menu__dessert {
-    width: 30%;
-    padding-bottom: 5px;
-  }
 }
 .main__menu__starter h3, .main__menu__dish h3, .main__menu__dessert h3 {
   display: flex;
@@ -339,6 +461,29 @@ body {
   padding: 15px;
   margin: 15px;
   gap: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  animation: slideup 1s forwards;
+  cursor: pointer;
+  animation: slidein 1s;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+.main__menu__starter__meal:hover .main__menu__starter__meal__box,
+.main__menu__starter__meal:hover .main__menu__dessert__meal__box,
+.main__menu__starter__meal:hover .main__menu__dish__meal__box, .main__menu__dish__meal:hover .main__menu__starter__meal__box,
+.main__menu__dish__meal:hover .main__menu__dessert__meal__box,
+.main__menu__dish__meal:hover .main__menu__dish__meal__box, .main__menu__dessert__meal:hover .main__menu__starter__meal__box,
+.main__menu__dessert__meal:hover .main__menu__dessert__meal__box,
+.main__menu__dessert__meal:hover .main__menu__dish__meal__box {
+  width: 60px;
 }
 .main__menu__starter__meal__description, .main__menu__dish__meal__description, .main__menu__dessert__meal__description {
   display: flex;
@@ -361,6 +506,23 @@ body {
 .main__menu__starter__meal__price, .main__menu__dish__meal__price, .main__menu__dessert__meal__price {
   display: flex;
   margin-top: 25px;
+}
+.main__menu__starter__meal__box, .main__menu__dish__meal__box, .main__menu__dessert__meal__box {
+  overflow: hidden;
+  color: white;
+  width: 59px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 20px 20px 0px;
+  background-color: #99e2d0;
+  width: 0px;
+  transition: all 300ms;
+}
+.main__menu__starter__meal .fa-circle-check, .main__menu__dish__meal .fa-circle-check, .main__menu__dessert__meal .fa-circle-check {
+  width: 20px;
+  height: 20px;
 }
 .main__menu__btn {
   display: flex;
@@ -385,8 +547,7 @@ body {
 @media screen and (min-width: 768px) {
   .main__menu__btn {
     width: 186px;
-    height: 50px;
-    padding: 15px;
+    margin-left: 35%;
   }
 }
 .main__menu__btn:hover {
