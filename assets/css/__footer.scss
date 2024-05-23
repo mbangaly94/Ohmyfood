@@ -16,6 +16,7 @@
     }
   }
   &__nav {
+    font-family: $text-font;
     display: flex;
     flex-direction: column;
     gap: 20px;
