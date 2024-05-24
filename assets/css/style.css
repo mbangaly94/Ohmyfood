@@ -505,12 +505,11 @@ body {
   margin: 0px;
 }
 .main__menu__starter__meal__description p, .main__menu__dish__meal__description p, .main__menu__dessert__meal__description p {
-  width: 75%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   font-family: "Roboto", sans-serif;
-  margin: 5px 5px 5px 0px;
+  margin: 5px;
 }
 .main__menu__starter__meal__price, .main__menu__dish__meal__price, .main__menu__dessert__meal__price {
   display: flex;

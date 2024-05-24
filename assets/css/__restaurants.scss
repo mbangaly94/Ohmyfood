@@ -159,12 +159,11 @@ body {
             margin: 0px;
           }
           p {
-            width: 75%;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
             font-family: $text-font;
-            margin: 5px 5px 5px 0px;
+            margin: 5px;
           }
         }
         &__price {
