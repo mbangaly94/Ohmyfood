@@ -1,10 +1,10 @@
-@charset "UTF-8";
 ul {
   margin: 0px;
   padding: 0px;
 }
 
 .loader {
+  margin: 0px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -12,7 +12,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeout 2s forwards linear;
+  animation: fadeout 3s forwards;
 }
 
 @keyframes fadeout {
@@ -20,9 +20,6 @@ ul {
     opacity: 1;
     transition: transform 300ms ease-in-out;
     opacity: 1;
-  }
-  50% {
-    transform: rotate(180°);
   }
   90% {
     opacity: 0;
@@ -33,19 +30,38 @@ ul {
 }
 .lettre {
   color: #ff93e1;
-  font-size: 40px;
-  letter-spacing: 15px;
+  font-size: 30px;
+  letter-spacing: 5px;
   margin-bottom: 100px;
   animation: flash 1.2s linear infinite;
 }
 
 @keyframes flash {
   0% {
+    opacity: 1;
+    transform: rotateX(0def);
+    background-image: linear-gradient(to bottom, #ff93e1, #a16be0 80%);
     color: #99e2d0;
     text-shadow: 0 0 7px #99e2d0;
   }
+  25% {
+    background-color: yellow;
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    transform: rotate(-180);
+    background-color: blue;
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    background-color: green;
+    left: 0px;
+    top: 200px;
+  }
   90% {
-    color: #484848;
+    color: black;
     text-shadow: none;
   }
   100% {
@@ -214,6 +230,13 @@ ul {
     border-radius: 15px;
   }
 }
+.main__restaurant__card__new__badge {
+  background-color: #99e2d0;
+  color: #1b6150;
+  padding: 0.5rem;
+  border-radius: 10px;
+  position: absolute;
+}
 .main__restaurant__card__new img {
   width: 100%;
   height: 200px;
@@ -279,19 +302,28 @@ ul {
   justify-content: space-between;
 }
 
-header {
+.header {
   display: flex;
   justify-content: center;
-}
-
-header img {
-  background-color: #ffffff;
-  width: 60%;
+  align-items: center;
   height: 63px;
+  width: 100%;
+  background-color: #ffffff;
+}
+.header h1 {
   display: flex;
-  justify-self: center;
-  text-align: center;
-  margin-bottom: 5px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Shrikhand", cursive;
+  width: 100%;
+}
+.header__return {
+  padding: 5px;
+}
+.header__return i {
+  width: 30px;
+  height: 30px;
+  color: black;
 }
 
 .footer {
@@ -338,30 +370,6 @@ header img {
 .footer__nav li a {
   text-decoration: none;
   color: #ffffff;
-}
-
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 63px;
-  width: 100%;
-  background-color: #ffffff;
-}
-.header h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Shrikhand", cursive;
-  width: 100%;
-}
-.header__return {
-  padding: 5px;
-}
-.header__return i {
-  width: 30px;
-  height: 30px;
-  color: black;
 }
 
 body {
@@ -457,6 +465,11 @@ body {
   text-transform: uppercase;
 }
 .main__menu__starter__meal, .main__menu__dish__meal, .main__menu__dessert__meal {
+  flex-grow: 1;
+  font-size: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   display: flex;
   justify-content: space-between;
   align-content: flex-start;
@@ -492,6 +505,7 @@ body {
   width: 60px;
 }
 .main__menu__starter__meal__description, .main__menu__dish__meal__description, .main__menu__dessert__meal__description {
+  width: 100%;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -500,11 +514,15 @@ body {
   padding: 0px;
 }
 .main__menu__starter__meal__description h4, .main__menu__dish__meal__description h4, .main__menu__dessert__meal__description h4 {
+  max-width: 60%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   font-family: "Roboto", sans-serif;
-  display: flex;
   margin: 0px;
 }
 .main__menu__starter__meal__description p, .main__menu__dish__meal__description p, .main__menu__dessert__meal__description p {
+  max-width: 60%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -512,6 +530,7 @@ body {
   margin: 5px;
 }
 .main__menu__starter__meal__price, .main__menu__dish__meal__price, .main__menu__dessert__meal__price {
+  margin-left: -55px;
   display: flex;
   margin-top: 25px;
 }

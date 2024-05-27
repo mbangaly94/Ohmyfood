@@ -1,4 +1,5 @@
 .loader {
+  margin: 0px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -6,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeout 2s forwards linear;
+  animation: fadeout 3s forwards;
 }
 @keyframes fadeout {
   0% {
@@ -14,9 +15,7 @@
     transition: transform 300ms ease-in-out;
     opacity: 1;
   }
-  50% {
-    transform: rotate(180°);
-  }
+
   90% {
     opacity: 0;
   }
@@ -27,19 +26,39 @@
 
 .lettre {
   color: $light-secondary-color;
-  font-size: 40px;
-  letter-spacing: 15px;
+  font-size: 30px;
+  letter-spacing: 5px;
   margin-bottom: 100px;
   animation: flash 1.2s linear infinite;
 }
 
 @keyframes flash {
   0% {
+    opacity: 1;
+    transform: rotateX(0def);
+    background-image: $light-gradient;
     color: $color-tertiary;
     text-shadow: 0 0 7px $color-tertiary;
   }
+
+  25% {
+    background-color: yellow;
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    transform: rotate(-180);
+    background-color: blue;
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    background-color: green;
+    left: 0px;
+    top: 200px;
+  }
   90% {
-    color: #484848;
+    color: black;
     text-shadow: none;
   }
   100% {
@@ -122,28 +141,30 @@
         gap: 10px;
       }
     }
-    &__stages__stage {
-      margin: 20px;
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      background-color: #f6f6f6;
-      border-radius: 20px;
-      transition: all 0.2s ease-in-out;
+    &__stages {
+      &__stage {
+        margin: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        background-color: #f6f6f6;
+        border-radius: 20px;
+        transition: all 0.2s ease-in-out;
 
-      @media screen and (min-width: 768px) {
-        gap: 10px;
+        @media screen and (min-width: 768px) {
+          gap: 10px;
+        }
+        div {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #9356dc;
+          border-radius: 50px 50px;
+          color: #ffffff;
+        }
       }
-    }
-    &__stages__stage div {
-      width: 24px;
-      height: 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #9356dc;
-      border-radius: 50px 50px;
-      color: #ffffff;
     }
   }
 
@@ -181,6 +202,13 @@
           gap: 50px;
           background-color: #ffffff;
           border-radius: 15px;
+        }
+        &__badge {
+          background-color: #99e2d0;
+          color: #1b6150;
+          padding: 0.5rem;
+          border-radius: 10px;
+          position: absolute;
         }
       }
       &__new img {

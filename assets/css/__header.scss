@@ -1,14 +1,23 @@
-header {
+.header {
   display: flex;
   justify-content: center;
-}
-
-header img {
-  background-color: #ffffff;
-  width: 60%;
+  align-items: center;
   height: 63px;
-  display: flex;
-  justify-self: center;
-  text-align: center;
-  margin-bottom: 5px;
+  width: 100%;
+  background-color: #ffffff;
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Shrikhand", cursive;
+    width: 100%;
+  }
+  &__return {
+    padding: 5px;
+    i {
+      width: 30px;
+      height: 30px;
+      color: black;
+    }
+  }
 }
