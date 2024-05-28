@@ -234,8 +234,17 @@ ul {
   background-color: #99e2d0;
   color: #1b6150;
   padding: 0.5rem;
-  border-radius: 10px;
+  border-radius: 2px;
   position: absolute;
+  left: 70%;
+  margin-top: 5px;
+}
+@media screen and (min-width: 768px) {
+  .main__restaurant__card__new__badge {
+    position: absolute;
+    left: auto;
+    margin-left: 30%;
+  }
 }
 .main__restaurant__card__new img {
   width: 100%;
@@ -464,6 +473,15 @@ body {
   font-weight: 300;
   text-transform: uppercase;
 }
+.main__menu__starter h3::after, .main__menu__dish h3::after, .main__menu__dessert h3::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  background-color: #99e2d0;
+}
 .main__menu__starter__meal, .main__menu__dish__meal, .main__menu__dessert__meal {
   flex-grow: 1;
   font-size: 1rem;
@@ -481,18 +499,18 @@ body {
   padding: 0px 0px 0px 10px;
   gap: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  animation: slideup 1s forwards;
+  animation: slidein 3s forwards;
+  animation-fill-mode: both;
   cursor: pointer;
-  animation: slidein 1s;
 }
 @keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
+  0% {
+    transform: translateY(20px);
+    opacity: 0%;
   }
-  to {
-    margin-left: 0%;
-    width: 100%;
+  100% {
+    transform: translateY(0px);
+    opacity: 100%;
   }
 }
 .main__menu__starter__meal:hover .main__menu__starter__meal__box,
@@ -537,7 +555,6 @@ body {
 .main__menu__starter__meal__box, .main__menu__dish__meal__box, .main__menu__dessert__meal__box {
   overflow: hidden;
   color: white;
-  width: 59px;
   height: 60px;
   display: flex;
   justify-content: center;

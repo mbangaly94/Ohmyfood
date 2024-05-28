@@ -86,6 +86,15 @@ body {
         font-weight: 300;
         text-transform: uppercase;
       }
+      h3::after {
+        content: "";
+        width: 50px;
+        height: 2px;
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        background-color: #99e2d0;
+      }
 
       &__meal {
         flex-grow: 1;
@@ -105,19 +114,19 @@ body {
         padding: 0px 0px 0px 10px;
         gap: 5px;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        animation: slideup 1s forwards;
+        animation: slidein 3s forwards;
+        animation-fill-mode: both;
         cursor: pointer;
 
-        animation: slidein 1s;
         @keyframes slidein {
-          from {
-            margin-left: 100%;
-            width: 300%;
+          0% {
+            transform: translateY(20px);
+            opacity: 0%;
           }
 
-          to {
-            margin-left: 0%;
-            width: 100%;
+          100% {
+            transform: translateY(0px);
+            opacity: 100%;
           }
         }
 
@@ -162,7 +171,6 @@ body {
         &__box {
           overflow: hidden;
           color: white;
-          width: 59px;
           height: 60px;
           display: flex;
           justify-content: center;

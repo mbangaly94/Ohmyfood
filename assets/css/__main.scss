@@ -207,8 +207,15 @@
           background-color: #99e2d0;
           color: #1b6150;
           padding: 0.5rem;
-          border-radius: 10px;
+          border-radius: 2px;
           position: absolute;
+          left: 70%;
+          margin-top: 5px;
+          @media screen and (min-width: 768px) {
+            position: absolute;
+            left: auto;
+            margin-left: 30%;
+          }
         }
       }
       &__new img {
