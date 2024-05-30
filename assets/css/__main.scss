@@ -13,7 +13,6 @@
   0% {
     opacity: 1;
     transition: transform 300ms ease-in-out;
-    opacity: 1;
   }
 
   90% {
@@ -246,7 +245,8 @@
             display: flex;
             align-items: center;
             &__heart {
-              position: relative;
+              position: absolute;
+
               .fa-regular {
                 text-decoration: none;
                 display: flex;
@@ -254,11 +254,13 @@
                 left: 0;
               }
               .fa-solid {
-                opacity: 0;
+                opacity: 1;
                 position: absolute;
                 top: 0;
                 left: 0;
-                &:hover {
+              }
+              &:hover {
+                .fa-solid {
                   opacity: 1;
                   transition: all 400ms;
                   background: $light-gradient;
