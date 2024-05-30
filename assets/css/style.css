@@ -19,7 +19,6 @@ ul {
   0% {
     opacity: 1;
     transition: transform 300ms ease-in-out;
-    opacity: 1;
   }
   90% {
     opacity: 0;
@@ -290,7 +289,7 @@ ul {
   top: 0;
   left: 0;
 }
-.main__restaurant__card__note__title__head__heart .fa-solid:hover {
+.main__restaurant__card__note__title__head__heart:hover .fa-solid {
   opacity: 1;
   transition: all 400ms;
   background: linear-gradient(to bottom, #ff93e1, #a16be0 80%);
@@ -548,6 +547,7 @@ body {
   margin: 5px;
 }
 .main__menu__starter__meal__price, .main__menu__dish__meal__price, .main__menu__dessert__meal__price {
+  margin-bottom: 5px;
   margin-left: -55px;
   display: flex;
   margin-top: 25px;

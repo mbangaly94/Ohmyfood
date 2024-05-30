@@ -245,8 +245,7 @@
             display: flex;
             align-items: center;
             &__heart {
-              position: absolute;
-
+              position: relative;
               .fa-regular {
                 text-decoration: none;
                 display: flex;
@@ -254,20 +253,18 @@
                 left: 0;
               }
               .fa-solid {
-                opacity: 1;
+                opacity: 0;
                 position: absolute;
                 top: 0;
                 left: 0;
               }
-              &:hover {
-                .fa-solid {
-                  opacity: 1;
-                  transition: all 400ms;
-                  background: $light-gradient;
-                  background-clip: text;
-                  -webkit-background-clip: text;
-                  color: transparent;
-                }
+              &:hover .fa-solid {
+                opacity: 1;
+                transition: all 400ms;
+                background: $light-gradient;
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
               }
             }
           }
